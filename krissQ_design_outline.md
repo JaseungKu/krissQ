@@ -15,10 +15,11 @@
     - Interface segregation principle
     - Dependency inversion principle
  - Obey PEP8
-
+ - Make a good documentation
+ 
 # krissqgl: kriss Quantum Gate Language package
-- Act as an interface layer between gate layer and physical hardware's API to define pulse sequences
-     (no need to know each AWG's language/API)
+- Act as an interface layer between python gate layer and physical hardware's API to define pulse sequences
+     (no need to know each AWG's language/API, for example, `seq = [X(q1), Y90(q1)])` instead of `wavejoin(w1, w2)`.)
 - Use gates in most cases (without knowing how to create them in reality) in defining pulse seqs.
 - Would this be practical for ZI and QM?
 
@@ -37,26 +38,22 @@
 - drivers: ZI, QM, ...
 
 # krissqm: kriss quantum measurement package 
-    
-## package/module/class
-- experiment (FileHandler, Sweeper, ...)
-- instruments
-    - various instrument drivers here
-    - AgilentE8257D
-    - SIM928
-- analysis
-     - fitting (T1, Ramsey,...)
-     - characterization
-- utility (load_data, plotting, ...)
-- plotter
-- pulse
-- calibration
+
+## Components:
+- Channels
+- File handler
+- Pulse sequencer
+- Sweeper
+- Instrument
+- Plotter
+- Analyzer
+- Utility (load_data, plotting, ...)
 
 # krissanalysis: kriss analysis library
 - Fittings
     - T1, Ramsey, DragFit, CRFit, ...
     - Resonator fit, ...
-    - QST, QPT,... fits
+    - QST, QPT, RB ... fits
     - HamiltonianTomoFit, 
 
 # krisslib: library of experiments for calibration, characterization and verification. 
@@ -64,8 +61,7 @@
 Sort of list of standard toolkit, something that can be used routinely.
 
 1. calibration
-    -PulseCal
-    - FreqCal
+    - RamseyCal
     - RabiAmpCal
     - DragCal
     - Pi2Cal
@@ -73,19 +69,25 @@ Sort of list of standard toolkit, something that can be used routinely.
     - CRAmpCal
     - CRPhaseCal
     - CRLengthCal
+    - siZZle
+    - CR tomo to cancel classical crosstalk
+    - direct CR cal?
+
 2. characterization
     - spectroscopy
     - T1, Ramsey, Echo
     - readout assignment fidelity
+    - QP parity
     - Effective temperature meas
-3. verification: tomography, benchmarking,  ...
-    - QST: 1Q, 2Q
-    - QPT: 1Q, 2Q
-    - RB:1Q, 2Q
+    
+3. verification: tomography, benchmarking, ... for measuring gate fidelity, quantum circuit fidelity, and etc.
+    - QST
+    - QPT
+    - GST
+    - RB
     - Leakage RB
     - Purity RB
     - Cycle benchmarking (CB)
-    - Cross entropy benchmarking (XEB)
-    - GST
+    - Cross entropy benchmarking (XEB)    
     - QV (Quantum Volume)
 
