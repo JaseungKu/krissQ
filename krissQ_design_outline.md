@@ -24,13 +24,19 @@
 - Would this be practical for ZI and QM?
 
 ## Modules:
-- Channels: qubit(), readout(), logical channel, physical channel, channelmapper
-- Pulseprimatives (Utheta, Xtheta, Ytheta, CR, echoCR, rotaryCR, ...)
-- Pulsequencer : define pulse sequences
-- Pulseshapes: define shapes of pulses
+- Channels: LogicalChannel, Qubit, CR, Readout, Marker
+  - Qubit:
+    - attribute:SSB, pulse_params(pulse_shape, length, pi2amp, piamp, drag,..), physical_channel
+    - method: set_physical_channel()
+  - Readout: SSB, pulse_params(pulse_shape, length, amp), physical_channel, set_physical_channel()
+  - CR: controlQ, targetQ, SSB, length, amp, phase
+
+- Pulse_primatives (Utheta, Xtheta, Ytheta, X90, Y90, Z, CR, echoCR, rotaryCR, ...)
+- Pulsequencer: define pulse sequences
+- Pulse_shapes: define required pulse params for each pulse
 - Pulsecollection (collections of functions or classes) 
     - characterization: spec, Rabi, Ramsey, Echo, T1, decoupling..
-    - calibration: RabiampCal, PiCal, Pi2Cal, DragCal, CR ... 
+    - calibration: RabiAmpCal, PiCal, Pi2Cal, DragCal, CR ... 
     - verification: RB, QST, QPT, HamiltonianTomo, GST,...
     - PulseSeqPlotter
     
