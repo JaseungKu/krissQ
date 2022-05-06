@@ -17,7 +17,7 @@
  - Obey PEP8
  - Make a good documentation
  
-# krissqgl: kriss Quantum Gate Language package
+# krissQqgl: kriss Quantum Gate Language package
 - Act as an interface layer between python gate layer and physical hardware's API to define pulse sequences
      (no need to know each AWG's language/API, for example, `seq = [X(q1), Y90(q1)])` instead of `wavejoin(w1, w2)`.)
 - Use gates in most cases (without knowing how to create them in reality) in defining pulse seqs.
@@ -39,61 +39,50 @@
     - calibration: RabiAmpCal, PiCal, Pi2Cal, DragCal, CR ... 
     - verification: RB, QST, QPT, HamiltonianTomo, GST,...
     - PulseSeqPlotter
-    
-## Directory:
-- drivers: ZI, QM, ...
 
-# krissqm: kriss quantum measurement package 
-
-## Components:
+# krissQqm: kriss quantum measurement package 
 - Channels
 - File handler
 - Pulse sequencer
 - Sweeper
 - Instrument
 - Plotter
-- Analyzer
 - Utility (load_data, plotting, ...)
+- Analysis
+    - Fittings
+        - T1, Ramsey, DragFit, CRFit, ...
+        - Resonator fit, ...
+        - QST, QPT, RB ... fits
+        - HamiltonianTomoFit, 
+ - library: library of experiments for calibration, characterization and verification. Sort of list of standard toolkit, something that can be used routinely.
+    - calibration
+        - RamseyCal
+        - RabiAmpCal
+        - DragCal
+        - Pi2Cal
+        - PiCal
+        - CRAmpCal
+        - CRPhaseCal
+        - CRLengthCal
+        - siZZle
+        - CR tomo to cancel classical crosstalk
+        - direct CR cal?
 
-# krissanalysis: kriss analysis library
-- Fittings
-    - T1, Ramsey, DragFit, CRFit, ...
-    - Resonator fit, ...
-    - QST, QPT, RB ... fits
-    - HamiltonianTomoFit, 
-
-# krisslib: library of experiments for calibration, characterization and verification. 
-
-Sort of list of standard toolkit, something that can be used routinely.
-
-1. calibration
-    - RamseyCal
-    - RabiAmpCal
-    - DragCal
-    - Pi2Cal
-    - PiCal
-    - CRAmpCal
-    - CRPhaseCal
-    - CRLengthCal
-    - siZZle
-    - CR tomo to cancel classical crosstalk
-    - direct CR cal?
-
-2. characterization
-    - spectroscopy
-    - T1, Ramsey, Echo
-    - readout assignment fidelity
-    - QP parity
-    - Effective temperature meas
+    - characterization
+        - spectroscopy
+        - T1, Ramsey, Echo
+        - readout assignment fidelity
+        - QP parity
+        - Effective temperature meas
     
-3. verification: tomography, benchmarking, ... for measuring gate fidelity, quantum circuit fidelity, and etc.
-    - QST
-    - QPT
-    - GST
-    - RB
-    - Leakage RB
-    - Purity RB
-    - Cycle benchmarking (CB)
-    - Cross entropy benchmarking (XEB)    
-    - QV (Quantum Volume)
+    - verification: tomography, benchmarking, ... for measuring gate fidelity, quantum circuit fidelity, and etc.
+        - QST
+        - QPT
+        - GST
+        - RB
+        - Leakage RB
+        - Purity RB
+        - Cycle benchmarking (CB)
+        - Cross entropy benchmarking (XEB)    
+        - QV (Quantum Volume)
 
