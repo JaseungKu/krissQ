@@ -3,7 +3,7 @@ import numpy as np
 from dataclasses import dataclass
 from abc import ABC, abstractclass
 from typing import Dict, List
-from channel_libraries import Channel
+from channel_libraries import IQChannel, MarkerChannel 
 
 @dataclass
 class Pulse:
