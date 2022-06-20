@@ -53,9 +53,9 @@
         - T1, Ramsey, DragFit, CRFit, ...
         - Resonator fit, ...
         - QST, QPT, RB ... fits
-        - HamiltonianTomoFit, 
+        - HamiltonianTomoFit
  - library: library of experiments for calibration, characterization and verification. Sort of list of standard toolkit, something that can be used routinely.
-    - calibration
+    - Calibration
         - RamseyCal
         - RabiAmpCal
         - DragCal
@@ -68,14 +68,14 @@
         - CR tomo to cancel classical crosstalk
         - direct CR cal?
 
-    - characterization
-        - spectroscopy
+    - Characterization
+        - Spectroscopy
         - T1, Ramsey, Echo
-        - readout assignment fidelity
+        - Readout assignment fidelity
         - QP parity
         - Effective temperature meas
     
-    - verification: tomography, benchmarking, ... for measuring gate fidelity, quantum circuit fidelity, and etc.
+    - Verification: tomography, benchmarking, ... for measuring gate fidelity, quantum circuit fidelity, and etc.
         - QST
         - QPT
         - GST
